@@ -23,6 +23,12 @@
  */
 function createAdder(initialValue = 0) {
   // write code here
+  let firstValue = initialValue;
+  return (...array) => {
+    firstValue = array.reduce((adder, currentAdder) =>
+      adder + currentAdder, firstValue);
+    return firstValue;
+  };
 }
 
 module.exports = createAdder;
