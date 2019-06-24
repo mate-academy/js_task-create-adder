@@ -25,7 +25,7 @@ function createAdder(initialValue = 0) {
   let previousValue = initialValue;
 
   return function(...currentValue) {
-    currentValue.reduce(function(summ, current) {
+    currentValue.forEach(function(current) {
       previousValue += current;
     }, 0);
 
