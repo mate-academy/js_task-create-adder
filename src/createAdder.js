@@ -24,10 +24,12 @@
 
 function createAdder(initialValue = 0) {
   let res = initialValue;
-  return function adder1(...arg) {
-    for (let i = 0; i < arg.length; i++) {
-      res += arg[i];
+
+  return function adder1(...args) {
+    for (let i = 0; i < args.length; i++) {
+      res += args[i];
     }
+
     return res;
   };
 }
