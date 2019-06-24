@@ -22,7 +22,23 @@
  * @return {number}
  */
 function createAdder(initialValue = 0) {
-  // write code here
+  let previousSum = 0;
+
+  return function adder(...items) {
+    const firstValue = (previousSum === 0 ?
+      initialValue
+      : 0
+    );
+
+    const sum = (items.length === 0 ? 
+      firstValue + previousSum
+      : firstValue + previousSum + items.reduce((a, b) => a + b)
+    );
+
+    previousSum = sum;
+
+    return sum;
+  };
 }
 
 module.exports = createAdder;
