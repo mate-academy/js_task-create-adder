@@ -22,7 +22,17 @@
  * @return {number}
  */
 function createAdder(initialValue = 0) {
-  // write code here
+  let result = initialValue;
+
+  function adder(...args) {
+    result = args.reduce((preVal, item) => {
+      return preVal + item;
+    }, result);
+
+    return result;
+  }
+
+  return adder;
 }
 
 module.exports = createAdder;
