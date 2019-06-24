@@ -23,8 +23,8 @@
 const createAdder = (initialValue = 0) => {
   let resultingSum = initialValue;
   return (...transmittedArgs) => {
-    const innerSum = transmittedArgs.reduce((previousSum, currentNumder) =>
-      previousSum + currentNumder, resultingSum);
+    const innerSum = transmittedArgs.reduce((previousSum, currentNumber) =>
+      previousSum + currentNumber, resultingSum);
     resultingSum = innerSum;
     return resultingSum;
   };
