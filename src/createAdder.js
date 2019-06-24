@@ -1,5 +1,4 @@
 'use strict';
-
 /**
  * Write a function (factory) creating a function (device) returning the sum of
  * initialValue and all the arguments of current and all previous calls. By
@@ -21,8 +20,13 @@
  *
  * @return {number}
  */
-function createAdder(initialValue = 0) {
-  // write code here
-}
-
+const createAdder = (initialValue = 0) => {
+  let resultingSum = initialValue;
+  return (...transmittedArgs) => {
+    const innerSum = transmittedArgs.reduce((previousSum, currentNumder) =>
+      previousSum + currentNumder, resultingSum);
+    resultingSum = innerSum;
+    return resultingSum;
+  };
+};
 module.exports = createAdder;
