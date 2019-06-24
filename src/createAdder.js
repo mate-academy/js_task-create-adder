@@ -23,13 +23,12 @@
  */
 function createAdder(initialValue = 0) {
   let result = initialValue;
-  const adder = (...args) => {
+  return (...args) => {
     result = args.reduce((sum, number) => {
       return sum + number;
     }, result);
     return result;
   };
-  return adder;
 }
 
 module.exports = createAdder;
