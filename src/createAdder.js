@@ -28,8 +28,10 @@ function createAdder(initialValue = 0) {
     for (let i = 0; i < args.length; i++) {
       argsArr[i] = args[i];
     }
+
     const sum = argsArr.reduce((a, b) => a + b, 0);
     result += sum;
+
     return result;
   };
 }
