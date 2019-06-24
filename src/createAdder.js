@@ -23,6 +23,21 @@
  */
 function createAdder(initialValue = 0) {
   // write code here
+  let result = initialValue;
+  return function(a, b, c) {
+    if (arguments.length === 1) {
+      result += a;
+      return result;
+    } else if (arguments.length === 2) {
+      result += a + b;
+      return result;
+    } else if (arguments.length === 3) {
+      result += a + b + c;
+      return result;
+    } else {
+      return result;
+    }
+  };
 }
 
 module.exports = createAdder;
