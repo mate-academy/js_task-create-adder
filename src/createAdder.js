@@ -19,10 +19,21 @@
  *
  * @param {number} initialValue
  *
- * @return {number}
+ * @return {function(...[*]): number}
  */
+
 function createAdder(initialValue = 0) {
-  // write code here
+  const initVal = initialValue;
+  let lastSum = 0;
+  return (...params) => {
+    if ([...params].length !== 0) {
+      lastSum = [...params].reduce((accumulator, currentValue) => {
+        return accumulator + currentValue;
+      }, lastSum);
+    }
+
+    return lastSum + initVal;
+  };
 }
 
 module.exports = createAdder;
