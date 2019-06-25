@@ -25,10 +25,8 @@ function createAdder(initialValue = 0) {
   let saveSum = initialValue;
 
   function adder(...someArg) {
-    const sumOfCurrentArg = [...someArg]
-      .reduce((sum, currentValue) => sum + currentValue, 0);
-
-    saveSum += sumOfCurrentArg;
+    saveSum = [...someArg]
+      .reduce((sum, currentValue) => sum + currentValue, saveSum);
 
     return saveSum;
   }
