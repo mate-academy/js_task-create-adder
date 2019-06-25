@@ -24,13 +24,15 @@
 function createAdder(initialValue = 0) {
   let result = initialValue;
 
-  return function(...args) {
-    for (let i = 0; i < args.length; i++) {
-      result += args[i];
+  function device(...args) {
+    if (args.length !== 0) {
+      result += [...args].reduce((x, y) => x + y);
     }
 
     return result;
-  };
+  }
+
+  return device;
 }
 
 module.exports = createAdder;
