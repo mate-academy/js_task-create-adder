@@ -23,13 +23,13 @@
  */
 function createAdder(initialValue = 0) {
   // write code here
-  let x = initialValue;
+  let finalSum = initialValue;
 
   function device(...arr) {
     const result = [...arr]
-      .reduce((any, currentValue) => any + currentValue, 0);
-    x += result;
-    return x;
+      .reduce((sum, currentValue) => sum + currentValue, 0);
+    finalSum += result;
+    return finalSum;
   }
 
   return device;
