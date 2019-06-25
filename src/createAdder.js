@@ -1,3 +1,4 @@
+/* eslint-disable no-console,no-unused-vars */
 'use strict';
 
 /**
@@ -22,7 +23,15 @@
  * @return {number}
  */
 function createAdder(initialValue = 0) {
-  // write code here
+  let total = initialValue;
+  return function sum(...numbers) {
+    for (let index = 0; index < [...numbers].length; index++) {
+      total += numbers[index];
+      console.log(total);
+    }
+    return total;
+  };
 }
+const sumOfNumbers = createAdder();
 
 module.exports = createAdder;
