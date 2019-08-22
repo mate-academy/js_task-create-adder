@@ -26,7 +26,6 @@ function createAdder(initialValue = 0) {
 
   return function(...numbers) {
     elementsSum += [...numbers].reduce((a, b) => a + b, 0);
-    elementsSum += sumArgs;
     return elementsSum;
   };
 }
