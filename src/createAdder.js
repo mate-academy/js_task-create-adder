@@ -22,7 +22,15 @@
  * @return {number}
  */
 function createAdder(initialValue = 0) {
-  // write code here
+  let sumOfNumbers = initialValue;
+
+  return (...numbers) => {
+    const numbersList = [...numbers];
+    sumOfNumbers += numbersList
+      .reduce((sumOfItem, item) => sumOfItem + item, 0);
+
+    return sumOfNumbers;
+  };
 }
 
 module.exports = createAdder;
