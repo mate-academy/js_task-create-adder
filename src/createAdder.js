@@ -21,15 +21,16 @@
  *
  * @return {number}
  */
+
 function createAdder(initialValue = 0) {
-  let summ = initialValue;
+  let summArguments = initialValue;
   return function() {
     const arrgumentList = [...arguments];
     arrgumentList.forEach((element) => {
-      summ = summ + element;
+      summArguments = summArguments + element;
     });
 
-    return summ;
+    return summArguments;
   };
 }
 
