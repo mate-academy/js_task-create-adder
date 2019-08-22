@@ -25,9 +25,7 @@ function createAdder(initialValue = 0) {
   let sumAllCalls = initialValue;
 
   function addNumbers(...numbers) {
-    for (let i = 0; i < numbers.length; i++) {
-      sumAllCalls = sumAllCalls + numbers[i];
-    }
+    sumAllCalls = sumAllCalls + numbers.reduce((acum, num) => acum + num, 0);
 
     return sumAllCalls;
   }
