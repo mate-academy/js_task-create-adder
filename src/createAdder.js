@@ -35,13 +35,4 @@ function createAdder(initialValue = 0) {
   return addNumbers;
 }
 
-const adder1 = createAdder();
- console.log(adder1());
- console.log(adder1(10, 20));
- console.log(adder1(30, 40));
-
- const adder2 = createAdder(100);
- console.log(adder2(10));
- console.log(adder2(20, 30, 40));
- console.log(adder2());
 module.exports = createAdder;
