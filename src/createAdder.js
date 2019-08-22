@@ -22,14 +22,14 @@
  * @return {function(...[*]): number}
  */
 function createAdder(initialValue = 0) {
-  let resultValue = initialValue;
+  let value = initialValue;
 
   return function() {
-    for (const el of arguments) {
-      resultValue += el;
-    }
+    [...arguments].forEach((item) => {
+      value += item;
+    });
 
-    return resultValue;
+    return value;
   };
 }
 
