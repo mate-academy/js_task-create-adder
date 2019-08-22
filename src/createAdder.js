@@ -22,7 +22,15 @@
  * @return {number}
  */
 function createAdder(initialValue = 0) {
-  // write code here
+  let summ = initialValue;
+  return function() {
+    const arrgumentList = [...arguments];
+    arrgumentList.forEach((element) => {
+      summ = summ + element;
+    });
+
+    return summ;
+  };
 }
 
 module.exports = createAdder;
