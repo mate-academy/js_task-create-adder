@@ -24,10 +24,8 @@
 function createAdder(initialValue = 0) {
   let sumOfElem = initialValue;
 
-  return (...elems) => {
-    if ([...elems].length > 0) {
-      sumOfElem += [...elems].reduce((sum, elem) => sum + elem);
-    }
+  return (...numbers) => {
+    sumOfElem += [...numbers].reduce((sum, number) => sum + number, 0);
 
     return sumOfElem;
   };
