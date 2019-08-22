@@ -24,8 +24,8 @@
 function createAdder(initialValue = 0) {
   let elementsSum = initialValue;
 
-  return function(...args) {
-    const sumArgs = [...args].reduce((a, b) => a + b, 0);
+  return function(...numbers) {
+    const sumArgs = [...numbers].reduce((a, b) => a + b, 0);
     elementsSum += sumArgs;
     return elementsSum;
   };
