@@ -25,9 +25,7 @@ function createAdder(initialValue = 0) {
   let sum = initialValue;
 
   const device = (...params) => {
-    for (let i = 0; i < params.length; i++) {
-      sum += params[i];
-    }
+    params.forEach(el => (sum += el));
 
     return sum;
   };
