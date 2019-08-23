@@ -24,8 +24,11 @@
 function createAdder(initialValue = 0) {
   let sumOfNumbers = initialValue;
 
-  return (...args) => (sumOfNumbers = args
-    .reduce((adder, elem) => adder + elem, sumOfNumbers));
+  return (...args) => {
+    sumOfNumbers = args.reduce((adder, elem) => adder + elem, sumOfNumbers);
+
+    return sumOfNumbers;
+  };
 }
 
 module.exports = createAdder;
