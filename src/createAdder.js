@@ -22,14 +22,14 @@
  * @return {number}
  */
 function createAdder(initialValue = 0) {
-  let acc = initialValue;
+  let accumulator = initialValue;
 
   return (...num) => {
-    acc = num.length !== 0
-      ? num.reduce((sum, item) => sum + item, acc)
-      : acc;
+    accumulator = num.length !== 0
+      ? num.reduce((sum, item) => sum + item, accumulator)
+      : accumulator;
 
-    return acc;
+    return accumulator;
   };
 }
 
