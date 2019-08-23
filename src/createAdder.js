@@ -25,8 +25,7 @@ function createAdder(initialValue = 0) {
   let sumOfNumbers = initialValue;
 
   return (...numbers) => {
-    const numbersList = [...numbers];
-    sumOfNumbers += numbersList
+    sumOfNumbers += [...numbers]
       .reduce((sumOfItem, item) => sumOfItem + item, 0);
 
     return sumOfNumbers;
