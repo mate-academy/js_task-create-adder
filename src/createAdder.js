@@ -23,8 +23,10 @@
  */
 function createAdder(initialValue = 0) {
   let sumOfValues = initialValue;
+
   return function(...values) {
     sumOfValues += [...values].reduce((sum, value) => sum + value, 0);
+
     return sumOfValues;
   };
 }
