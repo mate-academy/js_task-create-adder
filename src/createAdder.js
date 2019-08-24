@@ -23,8 +23,9 @@
  */
 function createAdder(initialValue = 0) {
   let sum = initialValue;
-  return (...params) => {
-    params.forEach(param => {
+
+  return (...numbers) => {
+    numbers.forEach(param => {
       sum += param;
     });
 
