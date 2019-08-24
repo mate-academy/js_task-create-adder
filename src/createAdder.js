@@ -25,13 +25,9 @@ function createAdder(initialValue = 0) {
   let sum = initialValue;
 
   return (...arg) => {
-    let currentSum = 0;
-    if (arg.length > 0) {
-      currentSum = arg.reduce((acc, item) => acc + item) + sum;
-    } else {
-      currentSum = sum;
-    }
+    const currentSum = arg.reduce((acc, item) => acc + item, 0) + sum;
     sum = currentSum;
+
     return currentSum;
   };
 }
