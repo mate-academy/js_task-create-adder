@@ -22,8 +22,7 @@
  * @return {number}
  */
 function createAdder(initialValue = 0) {
-  let sumOfArgs = 0;
-  sumOfArgs += initialValue;
+  let sumOfArgs = initialValue;
 
   return (...args) => {
     args.forEach(arg => {
