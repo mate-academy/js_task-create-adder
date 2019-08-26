@@ -23,14 +23,14 @@
  */
 
 function createAdder(initialValue = 0) {
-  let summArguments = initialValue;
+  let sumArguments = initialValue;
 
   return function(...args) {
     args.forEach((element) => {
-      summArguments = summArguments + element;
+      sumArguments = sumArguments + element;
     });
 
-    return summArguments;
+    return sumArguments;
   };
 }
 
