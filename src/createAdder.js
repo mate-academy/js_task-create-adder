@@ -23,16 +23,11 @@
  */
 function createAdder(initialValue = 0) {
   // write code here
-  let initialValueCount = initialValue;
+  let count = initialValue;
 
-  return function(arg) {
-    if (arguments.length > 0) {
-      for (let i = 0; i < arguments.length; i++) {
-        initialValueCount += arguments[i];
-      }
-    }
-
-    return initialValueCount;
+  return function(...numbers) {
+    count += [...numbers].reduce((a, b) => a + b, 0);
+    return count;
   };
 }
 
