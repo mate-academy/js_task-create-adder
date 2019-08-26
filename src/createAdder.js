@@ -24,9 +24,9 @@
 
 function createAdder(initialValue = 0) {
   let summArguments = initialValue;
-  return function() {
-    const arrgumentList = [...arguments];
-    arrgumentList.forEach((element) => {
+
+  return function(...args) {
+    args.forEach((element) => {
       summArguments = summArguments + element;
     });
 
