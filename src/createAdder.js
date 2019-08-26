@@ -24,12 +24,9 @@
 function createAdder(initialValue = 0) {
   let prevValue = initialValue;
   return (...args) => {
-    if ([...args].length === 0) {
-      return prevValue;
-    }
     let result = [...args].reduce((a, b) => {
       return a + b;
-    });
+    }, 0);
 
     result += prevValue;
     prevValue = result;
