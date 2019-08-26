@@ -19,10 +19,19 @@
  *
  * @param {number} initialValue
  *
- * @return {number}
+ * @return {Function}
  */
 function createAdder(initialValue = 0) {
-  // write code here
+  let prevValue = initialValue;
+  return (...args) => {
+    let result = [...args].reduce((a, b) => {
+      return a + b;
+    }, 0);
+
+    result += prevValue;
+    prevValue = result;
+    return result;
+  };
 }
 
 module.exports = createAdder;
