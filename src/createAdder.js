@@ -24,8 +24,8 @@
 function createAdder(initialValue = 0) {
   let sum = initialValue;
   return (...numb) => {
-    for (let i = 0; i < numb.length; i++) {
-      sum += numb[i];
+    for (const dig of numb) {
+      sum += dig;
     }
     return sum;
   };
