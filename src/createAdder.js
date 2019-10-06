@@ -23,7 +23,7 @@
  */
 function createAdder(initialValue = 0) {
   let accum = initialValue;
-  function adder(newArgs) {
+  function adder() {
     let current;
     if ([...arguments].length === 0) {
       current = 0;
