@@ -23,7 +23,7 @@
  */
 function createAdder(initialValue = 0) {
   let accum = initialValue;
-  function adder() {
+  return () => {
     let current;
     if ([...arguments].length === 0) {
       current = 0;
@@ -33,8 +33,6 @@ function createAdder(initialValue = 0) {
     accum += current;
     return accum;
   }
-
-  return adder;
 }
 
 module.exports = createAdder;
