@@ -23,6 +23,16 @@
  */
 function createAdder(initialValue = 0) {
   // write code here
+  let defaultAmount = initialValue;
+
+  return function(...args) {
+    const currentAmount = args.reduce(
+      (sum, number) => sum + number, defaultAmount
+    );
+    defaultAmount = currentAmount;
+
+    return currentAmount;
+  };
 }
 
 module.exports = createAdder;
