@@ -23,8 +23,8 @@
  */
 function createAdder(initialValue = 0) {
   let result = initialValue;
-  return function() {
-    for (const i of arguments) {
+  return (...args) => {
+    for (const i of args) {
       result += i;
     }
 
