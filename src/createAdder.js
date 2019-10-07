@@ -22,12 +22,12 @@
  * @return {number}
  */
 function createAdder(initialValue = 0) {
-  let initValue = initialValue;
+  let counter = initialValue;
   return function(...args) {
     for (const int of args) {
-      initValue += int;
+      counter += int;
     }
-    return initValue;
+    return counter;
   };
 }
 
