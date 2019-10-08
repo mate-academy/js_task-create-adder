@@ -28,7 +28,7 @@ function createAdder(initialValue = 0) {
     if (args === undefined) {
       return sum;
     }
-    sum += args.reduce((suma, num) => suma + num, 0);
+    sum += args.reduce((sum, num) => sum + num, 0);
 
     return sum;
   };
