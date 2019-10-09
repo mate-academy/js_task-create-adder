@@ -22,18 +22,13 @@
  * @return {number}
  */
 function createAdder(initialValue = 0) {
-
   let sum = initialValue;
-
   return (...arg) => {
-
-    let sumNum = 0;
-
     if (arg.length !== 0) {
-      return sum += arg.reduce((sum, item) => sum + item)
+      sum += arg.reduce((sumNum, item) => sumNum + item);
+      return sum;
     }
-
-    return sum += sumNum;
+    return sum;
   };
 }
 
