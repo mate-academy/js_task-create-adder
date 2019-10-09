@@ -23,10 +23,7 @@
  */
 function createAdder(initialValue = 0) {
   let res = initialValue;
-  return function(...number) {
-    res += number.reduce((sum, index) => sum + index, 0);
-    return res;
-  };
+  return (...number) => (res += number.reduce((sum, index) => sum + index, 0));
 }
 
 module.exports = createAdder;
