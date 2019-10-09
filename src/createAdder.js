@@ -24,9 +24,9 @@
 function createAdder(initialValue = 0) {
   let sum = initialValue;
 
-  return function(...num) {
-    num.forEach(n => {
-      sum += n;
+  return function(...numbers) {
+    numbers.forEach(num => {
+      sum += num;
     });
 
     return sum;
