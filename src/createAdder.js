@@ -24,7 +24,7 @@
 function createAdder(initialValue = 0) {
   let memory = initialValue;
   return (...arg) => {
-    memory = memory + [...arg].reduce((a, b) => a + b, 0);
+    memory += [...arg].reduce((a, b) => a + b, 0);
     return memory;
   };
 }
