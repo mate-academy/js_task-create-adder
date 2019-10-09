@@ -22,13 +22,11 @@
  * @return {number}
  */
 function createAdder(initialValue = 0) {
-  let value = initialValue;
-
-  return function A(...args) {
+  return (...args) => {
     for (const num of args) {
-      value += num;
+      initialValue += num;
     }
-    return value;
+    return initialValue;
   };
 }
 
