@@ -30,7 +30,7 @@ function createAdder(initialValue = 0) {
     let sumNum = 0;
 
     if (arg.length !== 0) {
-      sumNum = arg.reduce( (sum, item) => sum + item )
+      return sum += arg.reduce((sum, item) => sum + item)
     }
 
     return sum += sumNum;
