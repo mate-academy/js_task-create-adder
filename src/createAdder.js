@@ -22,10 +22,13 @@
  * @return {number}
  */
 function createAdder(initialValue = 0) {
-  let counter = initialValue;
-  const numbersAdder = (...numbers) =>
-    (counter += numbers.reduce((a, b) => a + b, 0));
-  return numbersAdder;
+  let sum = initialValue;
+  return (...numb) => {
+    for (const dig of numb) {
+      sum += dig;
+    }
+    return sum;
+  };
 }
 
 module.exports = createAdder;
