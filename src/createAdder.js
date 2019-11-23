@@ -19,10 +19,27 @@
  *
  * @param {number} initialValue
  *
- * @return {number}
+ * @return {function(...[*]): *}
  */
 function createAdder(initialValue = 0) {
-  // write code here
+  let firstCall = true;
+  let sum = 0;
+  return (...digits) => {
+    if (firstCall && digits.length === 0) {
+      firstCall = false;
+      return (sum += initialValue);
+    }
+
+    let firstValue = 0;
+
+    if (firstCall) {
+      firstValue = initialValue;
+      firstCall = false;
+    }
+    return digits.length > 0 ? (
+      sum += digits.reduce((a, b) => a + b, firstValue)
+    ) : sum;
+  };
 }
 
 module.exports = createAdder;
