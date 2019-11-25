@@ -23,6 +23,14 @@
  */
 function createAdder(initialValue = 0) {
   // write code here
+  let sum = initialValue;
+
+  return function(...args) {
+    const result = args.reduce((prev, elem) => prev + elem, sum);
+    sum = result;
+
+    return result;
+  };
 }
 
 module.exports = createAdder;
