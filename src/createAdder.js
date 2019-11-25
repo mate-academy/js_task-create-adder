@@ -24,7 +24,7 @@
 function createAdder(initialValue = 0) {
   let sum = initialValue;
   return function(...args) {
-    sum = args.reduce((res, elem) => res += elem, sum); // eslint-disable-line
+    sum = args.reduce((res, elem) => res + elem, sum);
     return sum;
   };
 }
