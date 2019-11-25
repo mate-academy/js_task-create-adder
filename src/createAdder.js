@@ -23,7 +23,10 @@
  */
 function createAdder(initialValue = 0) {
   let sum = initialValue;
-  return (...args) => sum = args.reduce( (result, elem) => result += elem, sum);  // eslint-disable-line
+  return function(...args) {
+    sum = args.reduce((res, elem) => res += elem, sum); // eslint-disable-line
+    return sum;
+  };
 }
 
 module.exports = createAdder;
