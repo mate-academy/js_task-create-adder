@@ -21,8 +21,21 @@
  *
  * @return {number}
  */
-function createAdder(initialValue = 0) {
-  // write code here
+function createAdder(...initialValues) {
+  let addInside = 0;
+  let addHere = 0;
+
+  for (let i = 0; i < initialValues.length; i++) {
+    addHere += initialValues[i];
+  }
+  const addFunction = function(...args) {
+    for (let i = 0; i < args.length; i++) {
+      addInside += args[i];
+    }
+    return addInside + addHere;
+  };
+
+  return addFunction;
 }
 
 module.exports = createAdder;
