@@ -22,14 +22,14 @@
  * @return {number}
  */
 function createAdder(initialValue = 0) {
-  const arrOfValues = [];
+  let result = initialValue;
 
   return function(...args) {
-    arrOfValues.push(...args);
-
-    return arrOfValues.reduce((a, b) => {
+    result = [...args].reduce((a, b) => {
       return a + b;
-    }, initialValue);
+    }, result);
+
+    return result;
   };
 }
 
