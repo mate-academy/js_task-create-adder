@@ -24,8 +24,8 @@
 function createAdder(initialValue = 0) {
   let sum = initialValue;
 
-  return function(args) {
-    const argsArr = [...arguments];
+  return function(...args) {
+    const argsArr = [...args];
 
     sum += argsArr
       .reduce((accumulator, currentArg) => accumulator + currentArg, 0);
