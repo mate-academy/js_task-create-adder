@@ -22,7 +22,15 @@
  * @return {number}
  */
 function createAdder(initialValue = 0) {
-  // write code here
+  let genericSum = initialValue;
+
+  const adder = (...arg) => {
+    genericSum = arg.reduce((sum, num) => sum + num, genericSum);
+
+    return genericSum;
+  };
+
+  return adder;
 }
 
 module.exports = createAdder;
