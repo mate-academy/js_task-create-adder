@@ -25,8 +25,7 @@ function createAdder(initialValue = 0) {
   let res = initialValue;
 
   return function summer() {
-    const items = [...arguments];
-    const summOfValue = items.reduce((sum, current) => sum + current
+    const summOfValue = [...arguments].reduce((sum, current) => sum + current
       , 0);
 
     res += summOfValue;
