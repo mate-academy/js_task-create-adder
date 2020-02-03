@@ -17,18 +17,18 @@
  * console.log(adder2(20, 30, 40)); 200 = 100 + 10 + (20 + 30 + 40)
  * console.log(adder2()); 200 = the same as previous
  *
- * @param {number} initialValue
+ * @args {number} initialValue
  *
  * @return {number}
  */
 function createAdder(initialValue = 0) {
   let buffer = initialValue;
 
-  return function(...param) {
-    if (Array.isArray(param) && param.length) {
-      buffer += Number(param.reduce((a, b) => a + b));
+  return function(...args) {
+    if (Array.isArray(args) && args.length) {
+      buffer += Number(args.reduce((a, b) => a + b));
     } else {
-      buffer += Number(param);
+      buffer += Number(args);
     }
 
     return buffer;
