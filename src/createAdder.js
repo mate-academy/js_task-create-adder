@@ -22,7 +22,17 @@
  * @return {number}
  */
 function createAdder(initialValue = 0) {
-  // write code here
+  let buffer = initialValue;
+
+  return function(...param) {
+    if (Array.isArray(param) && param.length) {
+      buffer += Number(param.reduce((a, b) => a + b));
+    } else {
+      buffer += Number(param);
+    }
+
+    return buffer;
+  };
 }
 
 module.exports = createAdder;
