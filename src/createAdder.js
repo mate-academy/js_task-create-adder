@@ -22,13 +22,12 @@
  * @return {number}
  */
 function createAdder(initialValue = 0) {
-  let cache = initialValue;
+  let sum = initialValue;
 
   return (...args) => {
     const previousSum = args.reduce((a, b) => a + b, 0);
-    const sum = cache + previousSum;
 
-    cache = sum;
+    sum += previousSum;
 
     return sum;
   };
