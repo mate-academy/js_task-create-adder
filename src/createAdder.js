@@ -22,7 +22,6 @@
  * @return {number}
  */
 function createAdder(initialValue = 0) {
-  // eslint-disable-next-line no-unused-vars
   let sum = initialValue;
 
   return function(...args) {
