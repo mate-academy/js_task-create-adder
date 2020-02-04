@@ -22,7 +22,16 @@
  * @return {number}
  */
 function createAdder(initialValue = 0) {
-  // write code here
+  // eslint-disable-next-line no-unused-vars
+  let sum = initialValue;
+
+  return function(...args) {
+    const result = [...args].reduce((a, b) => a + b, 0);
+
+    sum += result;
+
+    return sum;
+  };
 }
 
 module.exports = createAdder;
