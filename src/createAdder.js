@@ -26,11 +26,9 @@ function createAdder(initialValue = 0) {
   let prevSum = initialValue;
 
   return (...args) => {
-    const currentSum = args.reduce((acc, current) => acc + current, prevSum);
+    prevSum = args.reduce((acc, current) => acc + current, prevSum);
 
-    prevSum = currentSum;
-
-    return currentSum;
+    return prevSum;
   };
 }
 
