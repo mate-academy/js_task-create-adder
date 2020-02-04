@@ -26,11 +26,7 @@ function createAdder(initialValue = 0) {
 
   return (...arg) => {
     if (arg.length > 0) {
-      for (let i = 0; i < arg.length; i++) {
-        sum += arg[i];
-      }
-
-      return sum;
+      sum += arg.reduce((acc, value) => acc + value);
     }
 
     return sum;
