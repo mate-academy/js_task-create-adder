@@ -24,14 +24,12 @@
 function createAdder(initialValue = 0) {
   let value = initialValue;
 
-  return function() {
-    const currentValue = [...arguments].reduce(
+  return function(...args) {
+    value = args.reduce(
       (acc, item) => acc + item, value
     );
 
-    value = currentValue;
-
-    return currentValue;
+    return value;
   };
 }
 
