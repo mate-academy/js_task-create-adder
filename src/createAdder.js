@@ -24,7 +24,7 @@
 function createAdder(initialValue = 0) {
   let result = initialValue;
 
-  function sum(value) {
+  function sum() {
     for (let i = 0; i < arguments.length; i++) {
       result += arguments[i];
     }
