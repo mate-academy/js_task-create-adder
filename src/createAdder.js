@@ -22,7 +22,17 @@
  * @return {number}
  */
 function createAdder(initialValue = 0) {
-  // write code here
+  const arr = [];
+
+  return (...value) => {
+    arr.push(...value);
+
+    function callback(result, element) {
+      return (element === undefined) ? result : result + element;
+    }
+
+    return arr.reduce(callback, initialValue);
+  };
 }
 
 module.exports = createAdder;
