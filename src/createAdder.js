@@ -25,7 +25,7 @@ function createAdder(initialValue = 0) {
   let res = initialValue;
 
   return function(...device) {
-    res += device.reduce((a, b) => a + b, 0);
+    res = device.reduce((a, b) => a + b, res);
 
     return res;
   };
