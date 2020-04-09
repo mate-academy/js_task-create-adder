@@ -19,10 +19,21 @@
  *
  * @param {number} initialValue
  *
- * @return {number}
+ * @return {function(...[*]): number}
  */
+// const adder2 = createAdder(100);
+// expect(adder2(10, 20, 30));
+
 function createAdder(initialValue = 0) {
-  // write code here
+  let value = initialValue;
+
+  return (...args) => {
+    const sum = args.reduce((a, b) => a + b, 0);
+
+    value += sum;
+
+    return value;
+  };
 }
 
 module.exports = createAdder;
