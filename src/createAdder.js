@@ -21,8 +21,20 @@
  *
  * @return {number}
  */
-function createAdder(initialValue = 0) {
-  // write code here
+function createAdder(value = 0) {
+  let sum = value;
+
+  return function(...arg) {
+    if (arguments.length === 0) {
+      return sum;
+    }
+
+    const result = [...arg].reduce((accum, cur) => accum + cur);
+
+    sum += result;
+
+    return sum;
+  };
 }
 
 module.exports = createAdder;
