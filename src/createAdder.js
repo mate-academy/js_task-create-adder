@@ -22,7 +22,14 @@
  * @return {number}
  */
 function createAdder(initialValue = 0) {
-  // write code here
+  return function(...args) {
+    const newInitialValue = args.reduce((a, b) => a + b, initialValue);
+
+    // eslint-disable-next-line no-param-reassign
+    initialValue = newInitialValue;
+
+    return newInitialValue;
+  };
 }
 
 module.exports = createAdder;
