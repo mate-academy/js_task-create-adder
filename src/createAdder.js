@@ -18,8 +18,6 @@
  * console.log(adder2()); 200 = the same as previous
  *
  * @param {number} initialValue
- *
- * @return {number}
  */
 function createAdder(initialValue = 0) {
   // write code here
