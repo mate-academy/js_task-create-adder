@@ -23,9 +23,7 @@ function createAdder(initialValue = 0) {
   let cach = initialValue;
 
   return (...arg) => {
-    for (const el of arg) {
-      cach += el;
-    }
+    cach += arg.reduce((acu, cur) => acu + cur, 0);
 
     return cach;
   };
