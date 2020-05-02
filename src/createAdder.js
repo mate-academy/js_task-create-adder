@@ -21,6 +21,13 @@
  */
 function createAdder(initialValue = 0) {
   // write code here
+  let value = initialValue;
+
+  return (...args) => {
+    value = args.reduce((sum, current) => sum + current, value);
+
+    return value;
+  };
 }
 
 module.exports = createAdder;
