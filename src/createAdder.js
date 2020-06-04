@@ -23,12 +23,8 @@ function createAdder(initialValue = 0) {
   let sum = initialValue;
 
   return function(...numbers) {
-    if (numbers.length === 0) {
-      return sum;
-    } else {
-      for (const numb of numbers) {
-        sum += numb;
-      }
+    for (const numb of numbers) {
+      sum += numb;
     }
 
     return sum;
