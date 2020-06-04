@@ -22,8 +22,8 @@
 function createAdder(initialValue = 0) {
   let result = [initialValue];
 
-  return (...xxx) => {
-    result = result.concat(xxx);
+  return (...sourceNum) => {
+    result = result.concat(sourceNum);
 
     return result.reduce((a, b) => {
       return a + b;
