@@ -20,12 +20,12 @@
  * @param {number} initialValue
  */
 function createAdder(initialValue = 0) {
-  let arr = [initialValue];
+  let result = [initialValue];
 
   return (...xxx) => {
-    arr = arr.concat(xxx);
+    result = result.concat(xxx);
 
-    return arr.reduce((a, b) => {
+    return result.reduce((a, b) => {
       return a + b;
     });
   };
