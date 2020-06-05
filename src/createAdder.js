@@ -20,14 +20,12 @@
  * @param {number} initialValue
  */
 function createAdder(initialValue = 0) {
-  let sumOfSums = initialValue;
+  let sum = initialValue;
 
   return function(...args) {
-    sumOfSums += args.length !== 0
-      ? args.reduce((sum, item) => sum + item)
-      : 0;
+    sum = args.reduce((accumulator, item) => accumulator + item, sum);
 
-    return sumOfSums;
+    return sum;
   };
 }
 
