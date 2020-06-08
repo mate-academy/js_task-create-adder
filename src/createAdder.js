@@ -20,7 +20,7 @@
  * @param {number} initialValue
  */
 function createAdder(initialValue = 0) {
-  const addedValues = [initialValue];
+  const values = [initialValue];
 
   return function(...args) {
     addedValues.push(...args);
