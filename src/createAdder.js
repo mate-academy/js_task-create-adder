@@ -20,7 +20,13 @@
  * @param {number} initialValue
  */
 function createAdder(initialValue = 0) {
-  // write code here
+  let adder = initialValue;
+
+  return function() {
+    // eslint-disable-next-line no-return-assign
+    return adder = [...arguments]
+      .reduce((first, second) => first + second, adder);
+  };
 }
 
 module.exports = createAdder;
