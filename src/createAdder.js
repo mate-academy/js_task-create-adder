@@ -20,12 +20,12 @@
  * @param {number} initialValue
  */
 function createAdder(initialValue = 0) {
-  const values = [initialValue];
+  const addedValues = [initialValue];
 
   return function(...args) {
-    values.push(...args);
+    addedValues.push(...args);
 
-    return values.reduce((acc, cur) => acc + cur);
+    return addedValues.reduce((acc, cur) => acc + cur);
   };
 }
 
