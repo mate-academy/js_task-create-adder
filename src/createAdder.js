@@ -23,9 +23,10 @@ function createAdder(initialValue = 0) {
   let adder = initialValue;
 
   return function() {
-    // eslint-disable-next-line no-return-assign
-    return adder = [...arguments]
+    adder = [...arguments]
       .reduce((first, second) => first + second, adder);
+
+    return adder;
   };
 }
 
