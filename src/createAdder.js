@@ -20,7 +20,13 @@
  * @param {number} initialValue
  */
 function createAdder(initialValue = 0) {
-  // write code here
+  let accumulator = initialValue;
+
+  return (...counter) => {
+    accumulator = counter.reduce((a, b) => (a + b), accumulator);
+
+    return accumulator;
+  };
 }
 
 module.exports = createAdder;
