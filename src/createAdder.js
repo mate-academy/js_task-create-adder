@@ -20,14 +20,14 @@
  * @param {number} initialValue
  */
 function createAdder(initialValue = 0) {
-  let accum = initialValue;
+  let accumulator = initialValue;
 
   return (...arg) => {
-    for (const value of arg) {
-      accum += value;
-    }
+    [ ...arg ].forEach(argument => {
+      accumulator += argument;
+    });
 
-    return accum;
+    return accumulator;
   };
 }
 
