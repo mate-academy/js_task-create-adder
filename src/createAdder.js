@@ -21,6 +21,11 @@
  */
 function createAdder(initialValue = 0) {
   // write code here
+  let sum = initialValue;
+  return (...args) => {
+    args.forEach((item) => { sum += item; });
+    return sum;
+  };
 }
 
 module.exports = createAdder;
