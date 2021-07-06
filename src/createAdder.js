@@ -20,7 +20,17 @@
  * @param {number} initialValue
  */
 function createAdder(initialValue = 0) {
-  // write code here
+  let result = initialValue;
+
+  return function(...arg) {
+    if (arg.length > 0) {
+      result += arg.reduce(function(a, b) {
+        return a + b;
+      });
+    }
+
+    return result;
+  };
 }
 
 module.exports = createAdder;
