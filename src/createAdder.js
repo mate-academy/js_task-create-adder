@@ -20,7 +20,14 @@
  * @param {number} initialValue
  */
 function createAdder(initialValue = 0) {
-  // write code here
-}
+  let sum = initialValue;
 
+  const device = (...params) => {
+    params.forEach(el => (sum += el));
+
+    return sum;
+  };
+
+  return device;
+}
 module.exports = createAdder;
