@@ -21,6 +21,17 @@
  */
 function createAdder(initialValue = 0) {
   // write code here
+  let initVal = initialValue;
+
+  const device = (...args) => {
+    const currentSum = [...args].reduce((accum, value) => accum + value, 0);
+
+    initVal += currentSum;
+
+    return isNaN(initVal) ? 0 : initVal;
+  };
+
+  return device;
 }
 
 module.exports = createAdder;
